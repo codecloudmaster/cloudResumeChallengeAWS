@@ -2,6 +2,8 @@
 The Cloud Resume Challenge is a project created by Forrest Brazeal, a cloud advocate and AWS Community Hero. It is designed to help people learn and showcase their skills in cloud computing, particularly with Amazon Web Services (AWS).
 The challenge involves creating a resume-style website and deploying it on AWS. Participants are encouraged to use various AWS services like Amazon S3 for hosting static content, Amazon DynamoDB for storing data, AWS Lambda for serverless functions, and more. The idea is not only to demonstrate technical skills but also to gain practical experience by building a real-world project.
 
+[Original website](https://cloudresumechallenge.dev/)
+
 # Cloud Resume Challenge Requirements
 
 Welcome to the Cloud Resume Challenge! This GitHub repository is your gateway to mastering cloud technologies and enhancing your resume. Below, you'll find a concise breakdown of the key requirements and best practices for completing this challenge.
@@ -12,11 +14,12 @@ To start, your resume must showcase the **AWS Cloud Practitioner certification**
 
 ## 2. HTML - Structured Content
 
-Craft your resume using **HTML**, not conventional document formats like Word or PDF. Here's an [example HTML resume](https://cloudresumechallenge.dev/example-resume.html) to get you started.
+Craft your resume using **HTML**, not conventional document formats like Word or PDF. Here's an [example HTML resume](https://codepen.io/emzarts/pen/OXzmym) to get you started.
 
 ## 3. CSS - Stylish Presentation
 
 Apply **CSS** to style your resume. While it doesn't need to be extravagant, a polished appearance is essential to make your resume stand out.
+[CSS Tutorial](https://www.w3schools.com/css/default.asp)
 
 ## 4. Static Website - AWS S3 Hosting
 
@@ -36,7 +39,7 @@ Enhance user experience by implementing a **visitor counter** on your resume web
 
 ## 8. Database - Amazon DynamoDB
 
-Manage your visitor counter's data using **Amazon DynamoDB**, a NoSQL database service. Opt for on-demand pricing to keep costs minimal. Access a [free DynamoDB course](https://aws.amazon.com/getting-started/hands-on/design-a-database-dynamodb/).
+Manage your visitor counter's data using **Amazon DynamoDB**, a NoSQL database service. Opt for on-demand pricing to keep costs minimal. Access a [free DynamoDB course](https://aws.amazon.com/dynamodb/getting-started/).
 
 ## 9. API - AWS API Gateway and Lambda
 
@@ -44,7 +47,7 @@ Create an **API** to mediate interactions between your web app and the database.
 
 ## 10. Python - Lambda Function
 
-While you can use JavaScript for the Lambda function, it's advisable to explore **Python**, a common language for backend programming. AWS SDK for Python (**boto3**) simplifies AWS integration. Here's a [free Python tutorial](https://www.learnpython.org/).
+While you can use JavaScript for the Lambda function, it's advisable to explore **Python**, a common language for backend programming. AWS SDK for Python (**boto3**) simplifies AWS integration. Here's a [free Python tutorial](https://www.learnpython.org/){:target="_blank"}.
 
 ## 11. Tests - Python Code Testing
 
