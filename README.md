@@ -20,7 +20,7 @@ For work on this project, I decided to use Terraform for creating all resources 
 - JS
 - Bash
 
-![Initial Diagram on first stage](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/3e43b1fa-fc41-47ef-825b-7c3ccc1951d3)
+![CloudResumeChallenge drawio](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/959c2cd0-64bf-4acf-b675-17224f3c6ba1)
 
 
 
