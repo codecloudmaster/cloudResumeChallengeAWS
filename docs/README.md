@@ -23,7 +23,7 @@ Welcome to the Cloud Resume Challenge! This GitHub repository is your gateway to
 
 ## 1. Certification - Prove Your AWS Knowledge
 
-To start, your resume must showcase the **AWS Cloud Practitioner certification**. While more advanced AWS certifications are impressive, the Cloud Practitioner certification provides a solid foundation. You can take this exam online for $100 USD through [AWS Training and Certification](https://aws.amazon.com/certification/).
+To start, your resume must showcase the **AWS Cloud Practitioner certification**. While more advanced AWS certifications are impressive, the Cloud Practitioner certification provides a solid foundation. You can take this exam online through [AWS Training and Certification](https://aws.amazon.com/certification/).
 
 ## 2. HTML - Structured Content
 
@@ -48,7 +48,7 @@ Give your resume a professional touch by pointing a **custom DNS domain name** t
 
 ## 7. JavaScript - Visitor Counter
 
-Enhance user experience by implementing a **visitor counter** on your resume webpage. This requires writing a bit of **JavaScript**. Here's a [helpful tutorial](https://www.w3schools.com/js/js_htmldom.asp) to get you started.
+Enhance the user experience by implementing a **visitor counter** on your resume webpage. This requires writing a bit of **JavaScript**. Here's a [helpful tutorial](https://www.w3schools.com/js/js_htmldom.asp) to get you started.
 
 ## 8. Database - Amazon DynamoDB
 
