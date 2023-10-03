@@ -1,6 +1,7 @@
 ## So the starter diagram and folder structure are:
 
-![Initial Diagram on first stage](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/3e43b1fa-fc41-47ef-825b-7c3ccc1951d3)
+![CloudResumeChallenge drawio](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/8ba4b61b-9f6d-47a1-b981-f4969eabab38)
+
 
 ```
 .
