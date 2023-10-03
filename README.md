@@ -7,16 +7,12 @@ The challenge involves creating a resume-style website and deploying it on AWS. 
 
 [Recommendations](docs/README.md)
 
+[Project documentation](docs)
+
 ## My Challenge
 
 For work on this project, I decided to use Terraform for creating all resources in the AWS Cloud, as an additional challenge. 
 
-### TO DO:
-
-- [X] Create an initial diagram of the cloud Infrastructure for the Project
-- [ ] Create a Folder for site files
-- [ ] Create a Folder for Terraform
-- [ ] Create Journal for tracking my progress
 
 ### Languages in the project:
 - Python
@@ -27,6 +23,4 @@ For work on this project, I decided to use Terraform for creating all resources 
 ![Initial Diagram on first stage](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/3e43b1fa-fc41-47ef-825b-7c3ccc1951d3)
 
 
-___
 
-`To be continued.....`
