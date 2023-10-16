@@ -22,7 +22,7 @@
 - [X] Start to creating issues, branches, tags and pull requests.
 
 
-## Tag 0.1.0
+## Tag 0.2.0
 ### File and folders in the project.
 We will use `Gitpod` as our workspace.
 
