@@ -59,7 +59,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   tags = {
-    UserUuid = var.user_uuid
+    Domain = var.user_domain
   }
 
   viewer_certificate {
@@ -68,8 +68,13 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 }
 
 resource "terraform_data" "invalidate_cache" {
-  triggers_replace = [terraform_data.md5_hash.output]
-    
+  for_each = fileset("${var.public_path}/", "*.{jpg,png,gig,css,html,js}")
+  triggers_replace = {
+    for file in fileset("${var.public_path}/", "*.{jpg,png,gig,css,html,js}") : file => md5(file("${var.public_path}/${file}"))
+    }
+  #triggers_replace = [each.value]
+  #triggers_replace = terraform_data.md5_hash_public.triggers_replace
+ 
   provisioner "local-exec" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.s3_distribution.id} --paths '/*'"
   }

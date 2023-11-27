@@ -1,16 +1,32 @@
+locals {
+  mime_types = {
+    "css"  = "text/css"
+    "html" = "text/html"
+    "ico"  = "image/vnd.microsoft.icon"
+    "js"   = "application/javascript"
+    "json" = "application/json"
+    "map"  = "application/json"
+    "png"  = "image/png"
+    "svg"  = "image/svg+xml"
+    "txt"  = "text/plain"
+  }
+}
+
 
 resource "aws_s3_bucket" "website_bucket" {
   bucket = "${var.bucket_name}"
     
   tags = {
-    UserUuid = var.user_uuid
+    Domain = var.user_domain
  }
 }
+
 
 resource "aws_s3_bucket_policy" "allow_access_from_cloudfront" {
   bucket = aws_s3_bucket.website_bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_cloudfront.json
 }
+
 
 
 data "aws_iam_policy_document" "allow_access_from_cloudfront" {
@@ -32,48 +48,20 @@ data "aws_iam_policy_document" "allow_access_from_cloudfront" {
 
 }
 
-resource "terraform_data" "md5_hash" {
-  for_each = fileset("${var.public_path}/assets/", "*.{jpg,png,gif}")
-  input = filemd5("${var.public_path}/assets/${each.key}")
-}
-
-resource "terraform_data" "md5_hash_public" {
-  for_each = fileset("${var.public_path}/", "*.{jpg,png,gig,css,html,js}")
-  input = filemd5("${var.public_path}/${each.key}")
-}
-
-
-resource "aws_s3_object" "index_html" {
+resource "aws_s3_object" "upload_public" {
+  for_each = fileset("${var.public_path}/", "*.{jpg,png,gif,css,html,js}")
   bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "index.html"
-  source = "${var.public_path}/index.html"
-  content_type = "text/html"
-  etag = filemd5("${var.public_path}/index.html")
-  
-  lifecycle {
-    replace_triggered_by = [terraform_data.md5_hash_public.output]
-  }
-  
+  key    = "${each.key}"
+  source = "${var.public_path}/${each.key}"
+  content_type = lookup(tomap(local.mime_types), element(split(".", each.key), length(split(".", each.key)) - 1))
+  etag = filemd5("${var.public_path}/${each.key}") 
 }
 
-resource "aws_s3_object" "upload_assets" {
-  for_each = fileset("${var.public_path}/assets/", "*.{jpg,png,gif}")
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "assets/${each.key}"
-  source = "${var.public_path}/assets/${each.key}"
-  
- # etag = filemd5("${var.public_path}/assets/${each.key}")
- # 
- # lifecycle {
- #   replace_triggered_by = [terraform_data.content_version.output]
- #   ignore_changes = [etag]
- # }
-}
-
-resource "aws_s3_object" "error_html" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "error.html"
-  source = "${var.public_path}/error.html"
-  content_type = "text/html"
-  #etag = filemd5("${var.public_path}/error.html")
-}
+#resource "aws_s3_object" "upload_assets" {
+#  for_each = fileset("${var.public_path}/assets/", "*.{jpg,png,gif}")
+#  bucket = aws_s3_bucket.website_bucket.bucket
+#  key    = "assets/${each.key}"
+#  source = "${var.public_path}/assets/${each.key}"
+#  
+#  etag = filemd5("${var.public_path}/assets/${each.key}")
+#}

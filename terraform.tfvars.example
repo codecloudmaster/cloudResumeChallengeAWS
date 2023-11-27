@@ -1,2 +1,3 @@
 public_path = "public"
 bucket_name = "resume.codecloudmaster.space"
+user_domain = "codecloudmaster.space"
