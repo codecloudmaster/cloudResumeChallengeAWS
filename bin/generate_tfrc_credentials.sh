@@ -7,7 +7,7 @@ filepath="${dir}${filename}"
 
 # Check if the Terraform token is set
 if [ -z "$MY_TERRAFORM_CLOUD_TOKEN" ]; then
-  echo "Error: MY_TERRAFORM_TOKEN environment variable is not set."
+  echo "Error: MY_TERRAFORM_CLOUD_TOKEN environment variable is not set."
   exit 1
 fi
 
