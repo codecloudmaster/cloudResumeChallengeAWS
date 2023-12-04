@@ -1,35 +1,29 @@
+# Variable for user domain
 variable "user_domain" {
   type        = string
   description = "My domain"
   
+  # Validation to ensure the user_domain is not an empty string
   validation {
     condition     = length(var.user_domain) > 0
     error_message = "User Domain cannot be an empty string"
   }
-  
 }
 
-#variable "content_version" {
-#  description = "The content version. Should be a positive integer starting at 1."
-#  type = number
-#
-#  validation {
-#    condition     = var.content_version > 0 && floor(var.content_version) == var.content_version
-#    error_message = "The content_version must be a positive integer starting at 1."
-#  }
-#}
-
+# Variable for the path to the assets folder
 variable "public_path" {
   description = "Path to assets folder"
-  type = string
+  type        = string
 }
 
+# Variable for the name of the S3 bucket
 variable "bucket_name" {
   description = "Name of the S3 bucket"
-  type = string
+  type        = string
 
+  # Validation to ensure the bucket_name is not an empty string and has a length greater than 3
   validation {
     condition     = length(var.bucket_name) > 3 
-    error_message = "Bucket name cannot be an empty string"
+    error_message = "Bucket name cannot be an empty string and must have a length greater than 3"
   }
 }

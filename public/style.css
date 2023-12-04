@@ -1,15 +1,7 @@
-@media print {
-    /* Your print styles go here */
-    body {
-      font-size: 8pt; /* Adjust font size for print */
-     
-    }
-    main {
-        font-size: 8pt;
-        
-    }
-    /* Add more print-specific styles as needed */
-  }
+/* Import Bootstrap CSS */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
+/* Regular styles for screen */
+@media screen {
 
 body {
     font-family: Arial, sans-serif;
@@ -19,13 +11,14 @@ body {
     box-sizing: border-box;
     color: #333;
 }
+
 header {
     background-color: #d2d8d2;
     color: white;
     text-align: center;
     padding: 10px;
-    
 }
+
 main {
     max-width: 1280px;
     margin: 20px auto;
@@ -34,22 +27,24 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
+
 h1 {
     color: #fcfaf8;
 }
+
 p {
     line-height: 1.6;
 }
+
 section {
     margin-bottom: 10px;
 }
+
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #d2d8d2;
-    color: #302b27;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: #313531;
+    color: #f5f3f2;
 }
-/* Customize your additional styles here */
+}
+

@@ -1,13 +1,14 @@
+# Define a local variable for CloudFront S3 origin ID
 locals {
   s3_origin_id = "OriginIDFor_${aws_s3_bucket.website_bucket.bucket}_Bucket"
 }
 
-
+# Create a CloudFront Origin Access Identity
 resource "aws_cloudfront_origin_access_identity" "default" {
-  comment = "AWS cloudfront identity for S3"
+  comment = "AWS CloudFront identity for S3"
 }
 
-
+# Create a CloudFront Origin Access Control for S3
 resource "aws_cloudfront_origin_access_control" "default" {
   name                              = "OAC ${aws_s3_bucket.website_bucket.id}"
   description                       = "OAC ${aws_s3_bucket.website_bucket.id} policy"
@@ -16,7 +17,13 @@ resource "aws_cloudfront_origin_access_control" "default" {
   signing_protocol                  = "sigv4"
 }
 
+# Create an ACM certificate for the custom domain
+resource "aws_acm_certificate" "custom_domain_cert" {
+  domain_name       = var.user_domain
+  validation_method = "DNS"
+}
 
+# Create a CloudFront Distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.website_bucket.bucket_regional_domain_name
@@ -41,8 +48,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
         forward = "none"
       }
     }
-    
-    
+
     viewer_protocol_policy = "allow-all"
     min_ttl                = 0
     default_ttl            = 3600
@@ -50,7 +56,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   price_class = "PriceClass_200"
-  
+
   restrictions {
     geo_restriction {
       restriction_type = "none"
@@ -62,19 +68,23 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     Domain = var.user_domain
   }
 
-  viewer_certificate {
-    cloudfront_default_certificate = true
+ viewer_certificate {
+    acm_certificate_arn      = aws_acm_certificate.custom_domain_cert.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2019"
   }
+
+  aliases = [var.user_domain]
 }
 
+# Create a local-exec provisioner for cache invalidation upon file changes
 resource "terraform_data" "invalidate_cache" {
   for_each = fileset("${var.public_path}/", "*.{jpg,png,gig,css,html,js}")
+
   triggers_replace = {
     for file in fileset("${var.public_path}/", "*.{jpg,png,gig,css,html,js}") : file => md5(file("${var.public_path}/${file}"))
-    }
-  #triggers_replace = [each.value]
-  #triggers_replace = terraform_data.md5_hash_public.triggers_replace
- 
+  }
+
   provisioner "local-exec" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.s3_distribution.id} --paths '/*'"
   }

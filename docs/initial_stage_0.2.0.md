@@ -1,4 +1,9 @@
-## So The initial diagram and folders structure are::
+- [Diagram](#the-initial-diagram-and-folders-structure-are)
+- [ToDO](#to-do-at-this-stage)
+- [0.2.0 Files and folders in the project. ](#tag-020)
+- [0.3.0 Terraform code](./terraform_code_0.3.0.md)
+
+## The initial diagram and folders structure are::
 
 ![CloudResumeChallenge drawio](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/8ba4b61b-9f6d-47a1-b981-f4969eabab38)
 
@@ -23,7 +28,7 @@
 
 
 ## Tag 0.2.0
-### File and folders in the project.
+### Files and folders in the project.
 We will use `Gitpod` as our workspace.
 
 `- .gitpod.yml` - config file for Gitpod environment.

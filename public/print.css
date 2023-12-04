@@ -1,0 +1,51 @@
+/* Print styles */
+
+@media print {
+    body, header {
+        font-family: Arial, sans-serif;
+        line-height: 1;
+        color: #000;
+        background-color: #fff; /* Set a background color for printing */
+    }
+
+    footer {
+        display: none;
+    }
+
+    main, section {
+        margin: 5px;
+        padding: 1px;
+        background-color: #fff;
+        box-shadow: none;
+        border-radius: 1px;
+        font-size: 10pt;
+    }
+    
+    h1 {
+        color: #000;
+        font-size: 12pt; /* Adjust the font size for better readability on print */
+        margin: 0; /* Remove margin to save space */
+        page-break-before: always; /* Start a new page for each h1 element */
+    }
+
+    p {
+        line-height: 1;
+        margin: 0; /* Remove margin to save space */
+    }  
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 5px;
+        text-align: left;
+    }
+
+    a {
+        color: #000;
+    }
+}

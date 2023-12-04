@@ -7,7 +7,9 @@ The challenge involves creating a resume-style website and deploying it on AWS. 
 
 [Recommendations](docs/README.md)
 
-[Project documentation](docs)
+[Project documentation](docs/initial_stage_0.2.0.md)
+
+
 
 ## My Challenge
 
