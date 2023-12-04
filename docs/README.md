@@ -15,6 +15,7 @@
   * [14. CI/CD (Back end) - Automate Deployments](#14-ci-cd--back-end----automate-deployments)
   * [15. CI/CD (Front end) - Keep Your Site Updated](#15-ci-cd--front-end----keep-your-site-updated)
   * [16. Blog Post - Share Your Journey](#16-blog-post---share-your-journey)
+  * [My progress](./initial_stage_0.2.0.md)
 
 
 # Cloud Resume Challenge Requirements

@@ -1,9 +1,10 @@
+## Tag 0.2.0
 - [Diagram](#the-initial-diagram-and-folders-structure-are)
 - [ToDO](#to-do-at-this-stage)
-- [0.2.0 Files and folders in the project. ](#tag-020)
-- [0.3.0 Terraform code](./terraform_code_0.3.0.md)
+- [Files and folders in the project. ](#files-and-folders-in-the-project)
+- [Terraform code](./terraform_code_0.3.0.md)
 
-## The initial diagram and folders structure are::
+## The initial diagram and folders structure are:
 
 ![CloudResumeChallenge drawio](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/8ba4b61b-9f6d-47a1-b981-f4969eabab38)
 
@@ -27,7 +28,7 @@
 - [X] Start to creating issues, branches, tags and pull requests.
 
 
-## Tag 0.2.0
+
 ### Files and folders in the project.
 We will use `Gitpod` as our workspace.
 
@@ -40,6 +41,7 @@ We will use `Gitpod` as our workspace.
 `- public` - Folder for site where we put all our index file, styles, js scripts, images, etc. There are files created locally and uploaded to github like `index.html` and `styles.css`. 
 
 `- main.tf, outputs.tf, variables.tf, *.tf` - Terraform files for deploying our site to AWS Cloud.
+
 
 
 

@@ -1,6 +1,6 @@
-## [HOME](./initial_stage_0.2.0.md)  
+  - ## [Tag 0.2.0](./initial_stage_0.2.0.md)  
 
-# Tag 0.3.0
+## Tag 0.3.0
 
 - [Terraform section](#terraform-section)
 - [Usage](#usage)

@@ -8,8 +8,26 @@
         background-color: #fff; /* Set a background color for printing */
     }
 
+    body {
+        size: A4;
+        
+    }
+
+    .hiddenprint {
+        display: none;
+        
+    }
+
     footer {
         display: none;
+    }
+
+    header {
+        font-size: 10pt;
+        text-align: center;
+        
+        
+
     }
 
     main, section {
@@ -19,18 +37,30 @@
         box-shadow: none;
         border-radius: 1px;
         font-size: 10pt;
+
+
     }
     
     h1 {
         color: #000;
         font-size: 12pt; /* Adjust the font size for better readability on print */
         margin: 0; /* Remove margin to save space */
-        page-break-before: always; /* Start a new page for each h1 element */
+        page-break-before: auto; /* Start a new page for each h1 element */
+        page-break-inside: avoid;
+    }
+
+    h3 {
+        color: #000;
+        font-size: 10pt; /* Adjust the font size for better readability on print */
+        margin: 2pt; /* Remove margin to save space */
+        
+        
     }
 
     p {
         line-height: 1;
         margin: 0; /* Remove margin to save space */
+        page-break-inside: avoid;
     }  
 
     table {
@@ -48,4 +78,15 @@
     a {
         color: #000;
     }
+    
+    ul {
+        columns: 1; /* Set the number of columns */
+        column-gap: 0.5em; /* Adjust the gap between columns */
+    }
+
+    /* Optional: Style the list items for better readability */
+    li {
+        margin-bottom: 0.2em;
+    }
+
 }
