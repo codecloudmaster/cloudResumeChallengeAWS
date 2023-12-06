@@ -27,3 +27,8 @@ variable "bucket_name" {
     error_message = "Bucket name cannot be an empty string and must have a length greater than 3"
   }
 }
+
+variable "cloudflare_api_token" {
+  description = "Token from clouflare API"
+  type = string
+}
