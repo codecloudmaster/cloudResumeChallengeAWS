@@ -2,19 +2,23 @@ data "cloudflare_zone" "codecloudmaster" {
   name = var.user_domain
 }
 
-resource "cloudflare_record" "codecloudmaster" {
+
+# Convert the set to a list
+locals {
+  validation_options_list = tolist(aws_acm_certificate.custom_domain_cert.domain_validation_options)
   
-  
-  for_each = {
-    for dvo in aws_acm_certificate.custom_domain_cert.domain_validation_options : dvo.domain_name => {
-      name    = dvo.resource_record_name
-      record  = dvo.resource_record_value[0]  # Assuming you want the first record value
-    }
-  }
-  
+  # Get the first DNS record from domain_validation_options
+  first_validation_option = element(local.validation_options_list, 0)
+}
+
+
+# Create Cloudflare CNAME records for ACM validation
+resource "cloudflare_record" "codecloudmaster" { 
+  allow_overwrite = false
   zone_id = data.cloudflare_zone.codecloudmaster.id
-  name    = each.value.name
-  value   = each.value.record
+  name    = local.first_validation_option.resource_record_name
+  value   = local.first_validation_option.resource_record_value
   type    = "CNAME"
   proxied = false
 }
+

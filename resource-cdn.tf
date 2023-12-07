@@ -30,8 +30,19 @@ resource "aws_acm_certificate" "custom_domain_cert" {
   }
 }
 
+# Wait for ACM certificate validation to complete
+resource "null_resource" "wait_for_validation" {
+  depends_on = [aws_acm_certificate.custom_domain_cert]
+
+  provisioner "local-exec" {
+    command = "sleep 300"  # Adjust the sleep duration as needed
+  }
+}
+
 # Create a CloudFront Distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
+  depends_on = [null_resource.wait_for_validation]
+
   origin {
     domain_name              = aws_s3_bucket.website_bucket.bucket_regional_domain_name
     origin_access_control_id = aws_cloudfront_origin_access_control.default.id
@@ -56,7 +67,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
       }
     }
 
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
     min_ttl                = 0
     default_ttl            = 3600
     max_ttl                = 86400
@@ -96,3 +107,5 @@ resource "terraform_data" "invalidate_cache" {
     command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.s3_distribution.id} --paths '/*'"
   }
 }
+
+

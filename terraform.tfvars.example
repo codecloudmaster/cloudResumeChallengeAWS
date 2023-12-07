@@ -1,4 +1,4 @@
 public_path = "public"
 bucket_name = "resume.codecloudmaster.space"
 user_domain = "codecloudmaster.space"
-cloudflare_api_token = "yourtoken"
+cloudflare_api_token = "$cloudflare_api_token"
