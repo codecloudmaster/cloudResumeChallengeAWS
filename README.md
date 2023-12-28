@@ -2,7 +2,7 @@
 
 ### [About The Cloud Resume Challenge](#about-the-cloud-resume-challenge)
 ### [My Challenge](#my-challenge)
-  - [Recent Diagram Related to Progress](#recent-diagram-related-to-progress)
+  - [Recent Diagram Related to Progress](#recent-diagram-related-to-the-progress)
   - [Prerequisites](#prerequisites)
   - [Important Notes](#important-notes)
   - [Usage](#usage)
