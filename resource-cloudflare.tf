@@ -2,7 +2,6 @@ data "cloudflare_zone" "codecloudmaster" {
   name = var.user_domain
 }
 
-
 # Convert the set to a list
 locals {
   validation_options_list = tolist(aws_acm_certificate.custom_domain_cert.domain_validation_options)

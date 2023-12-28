@@ -1,12 +1,16 @@
+- [Return to main page](../README.md)
+- [Initial stage: Tag 0.2.0](./initial_stage_tag_0.2.0.md)
+- [Terraform code: Tag 0.3.0](./terraform_code_tag_0.3.0.md) 
+- [Cloudflare option: Tag 0.4.0](./cloudflare_tag_0.4.0.md)
+
+
 ## Tag 0.2.0
 - [Diagram](#the-initial-diagram-and-folders-structure-are)
 - [ToDO](#to-do-at-this-stage)
 - [Files and folders in the project. ](#files-and-folders-in-the-project)
-- [Terraform code](./terraform_code_0.3.0.md)
 
-## The initial diagram and folders structure are:
 
-![CloudResumeChallenge drawio](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/8ba4b61b-9f6d-47a1-b981-f4969eabab38)
+## The initial folders structure are:
 
 
 ```

@@ -1,13 +1,20 @@
-  - ## [Tag 0.2.0](./initial_stage_0.2.0.md)  
+- [Return to main page](../README.md)
+- [Initial stage: Tag 0.2.0](./initial_stage_tag_0.2.0.md)
+- [Terraform code: Tag 0.3.0](./terraform_code_tag_0.3.0.md) 
+- [Cloudflare option: Tag 0.4.0](./cloudflare_tag_0.4.0.md)
 
 ## Tag 0.3.0
 
 - [Terraform section](#terraform-section)
-- [Usage](#usage)
+  - [Files description](#files-description)
 - [Important notes](#important-notes)
 
-## Diagram
-![CloudResumeChallenge drawio](https://github.com/codecloudmaster/cloudResumeChallengeAWS/assets/88540356/8ba4b61b-9f6d-47a1-b981-f4969eabab38)
+### TO DO at this stage:
+
+- [x] Create code for creating resources in AWS cloud
+- [x] Connect it to TF cloud
+- [x] Create resources on AWS and upload sie files.
+- [x] Get Cloufront distribution domain outpoot
 
 ## Terraform section
 ### Prerequisites
@@ -15,9 +22,9 @@
 
 - **AWS User**: An AWS user account with admin rights or the necessary permissions to create and manage resources. Ensure you have a valid AWS access key for this user.
 
-### Description of Files
+### Files description
 
-1. **`main.tf`**
+1. **`main.tf`**Description of Files
     - This file contains blocks for Terraform Cloud configuration and required provider settings for AWS. It establishes the connection to Terraform Cloud and specifies the AWS provider details, including version.
 
 2. **`resource-storage.tf`**
@@ -35,34 +42,6 @@
 6. **`terraform.tfvars.example`** (rename it to `terraform.tfvars`)
     - This file is used to set specific values for the variables declared in `variables.tf`. It allows you to customize configuration without modifying the Terraform files directly. For example, setting the user domain, public path, and S3 bucket name.
 
-### Usage
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/codecloudmaster/cloudResumeChallengeAWS.git
-    ```
-
-2. Navigate to the directory:
-    ```bash
-    cd cloudResumeChallengeAWS
-    ```
-
-3. Initialize Terraform:
-    ```bash
-    terraform init
-    ```
-
-4. Apply the configuration:
-    ```bash
-    terraform apply
-    ```
-
-5. After applying, check the outputs for important information:
-    ```bash
-    terraform output cloudfront_domain_name
-    terraform output cloudfront_distribution_id
-    terraform output acm_certificate_arn
-    ```
 
 ### Important Notes
 - You need to set up Terraform account if you want use it. Else - just comment section in `main.tf` related to Terraform:
