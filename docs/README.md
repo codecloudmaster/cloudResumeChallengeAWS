@@ -1,3 +1,5 @@
+### [Return to main page](../README.md)
+
 - [Cloud Resume Challenge Requirements](#cloud-resume-challenge-requirements)
   * [1. Certification - Prove Your AWS Knowledge](#1-certification---prove-your-aws-knowledge)
   * [2. HTML - Structured Content](#2-html---structured-content)
@@ -12,10 +14,14 @@
   * [11. Tests - Python Code Testing](#11-tests---python-code-testing)
   * [12. Infrastructure as Code (IaC) - AWS SAM or Terraform](#12-infrastructure-as-code--iac----aws-sam-or-terraform)
   * [13. Source Control - GitHub Repository](#13-source-control---github-repository)
-  * [14. CI/CD (Back end) - Automate Deployments](#14-ci-cd--back-end----automate-deployments)
-  * [15. CI/CD (Front end) - Keep Your Site Updated](#15-ci-cd--front-end----keep-your-site-updated)
+  * [14. CI/CD (Back end) - Automate Deployments](#14-cicd-back-end---automate-deployments)
+  * [15. CI/CD (Front end) - Keep Your Site Updated](#15-cicd-front-end---keep-your-site-updated)
   * [16. Blog Post - Share Your Journey](#16-blog-post---share-your-journey)
-  * [My progress](./initial_stage_0.2.0.md)
+
+  ### My progress:
+  - [Initial stage: Tag 0.2.0](./initial_stage_tag_0.2.0.md)
+  - [Terraform code: Tag 0.3.0](./terraform_code_tag_0.3.0.md) 
+  - [Cloudflare option: Tag 0.4.0](./cloudflare_tag_0.4.0.md)
 
 
 # Cloud Resume Challenge Requirements
